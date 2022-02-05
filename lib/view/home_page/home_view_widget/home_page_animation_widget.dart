@@ -1,6 +1,8 @@
+import 'dart:io';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_windows/responsive/responsive.dart';
 import 'package:flutter_windows/widget/animations/asset_image_size_tween.dart';
 
 class HomePageAnimationWidget extends StatefulWidget {
@@ -40,7 +42,10 @@ class _HomePageAnimationWidgetState extends State<HomePageAnimationWidget>
     final double minSize = min(size.width, size.height);
     return AssetImageSizeTween(
       animation: _animation,
-      sizeTween: Tween<double>(begin: minSize / 5, end: minSize / 4),
+      sizeTween: Tween<double>(
+        begin: Responsive.isSoftware ? minSize / 5 : minSize / 1.50,
+        end: Responsive.isSoftware ? minSize / 5 : minSize / 1.75,
+      ),
       assetsPath: "assets/jpg/pexels.jpg",
     );
   }
