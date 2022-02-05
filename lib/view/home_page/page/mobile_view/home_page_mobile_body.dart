@@ -15,17 +15,7 @@ class _HomePageMobileBodyState extends State<HomePageMobileBody> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        SquareAnimation(tapUpDetails: tapUpDetails),
-        ConstrainedBox(
-          constraints: const BoxConstraints.expand(),
-          child: GestureDetector(
-            behavior: HitTestBehavior.opaque,
-            onTapUp: (d) {
-              tapUpDetails = d.globalPosition;
-              setState(() {});
-            },
-          ),
-        ),
+        const SquareAnimation(),
         Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
