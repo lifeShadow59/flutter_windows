@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_windows/responsive/responsive.dart';
 import 'package:flutter_windows/view/home_page/page/desktop_view/home_page_desktop_entry.dart';
@@ -8,8 +9,12 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Responsive.isMobile
-        ? const HomePageMobileEntry()
-        : const HomePageDesktopEntry();
+    if (kIsWeb) {
+      return const HomePageMobileEntry();
+    } else if (Responsive.isMobile) {
+      return const HomePageMobileEntry();
+    } else {
+      return const HomePageDesktopEntry();
+    }
   }
 }

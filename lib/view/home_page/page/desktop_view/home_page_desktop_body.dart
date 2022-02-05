@@ -1,6 +1,5 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter_windows/view/home_page/home_view_widget/home_page_animation_widget.dart';
-import 'package:flutter_windows/widget/animations/asset_image_size_tween.dart';
 import 'package:flutter_windows/widget/animations/square_animation/square_animation.dart';
 
 class HomePageDesktopBody extends StatefulWidget {
