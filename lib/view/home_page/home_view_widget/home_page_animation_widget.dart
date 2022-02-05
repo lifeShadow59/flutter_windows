@@ -43,8 +43,8 @@ class _HomePageAnimationWidgetState extends State<HomePageAnimationWidget>
     return AssetImageSizeTween(
       animation: _animation,
       sizeTween: Tween<double>(
-        begin: Responsive.isSoftware ? minSize / 5 : minSize / 1.50,
-        end: Responsive.isSoftware ? minSize / 5 : minSize / 1.75,
+        begin: !Responsive.isMobile ? minSize / 5 : minSize / 1.50,
+        end: !Responsive.isMobile ? minSize / 5 : minSize / 1.75,
       ),
       assetsPath: "assets/jpg/pexels.jpg",
     );
