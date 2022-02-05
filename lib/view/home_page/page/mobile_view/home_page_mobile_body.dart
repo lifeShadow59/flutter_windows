@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_windows/view/home_page/home_view_widget/home_page_animation_widget.dart';
+import 'package:flutter_windows/widget/animations/square_animation/square_animation.dart';
 
 class HomePageMobileBody extends StatelessWidget {
   const HomePageMobileBody({Key? key}) : super(key: key);
