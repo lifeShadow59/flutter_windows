@@ -3,8 +3,9 @@ import 'package:flutter_windows/models/square_model.dart';
 import 'package:flutter_windows/widget/animations/square_animation/square_animation_functions.dart';
 
 class SquareAnimation extends StatefulWidget {
-  const SquareAnimation({Key? key}) : super(key: key);
-
+  const SquareAnimation({Key? key, required this.tapUpDetails})
+      : super(key: key);
+  final TapUpDetails? tapUpDetails;
   @override
   _SquareAnimationState createState() => _SquareAnimationState();
 }
@@ -18,33 +19,28 @@ class _SquareAnimationState extends SquareAnimationFunction {
 
   @override
   Widget build(BuildContext context) {
-    return ConstrainedBox(
-      constraints: const BoxConstraints.expand(),
-      child: GestureDetector(
-        behavior: HitTestBehavior.opaque,
-        onTapUp: (d) {
-          setNewLocation(d.localPosition);
-        },
-        child: Stack(
-          children: list
-              .asMap()
-              .entries
-              .map(
-                (e) => AnimatedBuilder(
-                  animation: animationController[e.key],
-                  builder: (contex, snapshot) {
-                    return CustomPaint(
-                      painter: _Sqaures(
-                        e.value,
-                        animation[e.key].value,
-                      ),
-                    );
-                  },
-                ),
-              )
-              .toList(),
-        ),
-      ),
+    if (widget.tapUpDetails != null) {
+      setNewLocation(widget.tapUpDetails!.localPosition);
+    }
+
+    return Stack(
+      children: list
+          .asMap()
+          .entries
+          .map(
+            (e) => AnimatedBuilder(
+              animation: animationController[e.key],
+              builder: (contex, snapshot) {
+                return CustomPaint(
+                  painter: _Sqaures(
+                    e.value,
+                    animation[e.key].value,
+                  ),
+                );
+              },
+            ),
+          )
+          .toList(),
     );
   }
 }

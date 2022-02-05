@@ -9,7 +9,7 @@ abstract class SquareAnimationFunction extends State<SquareAnimation>
   var _currentLocation = const Offset(0, 0);
   late List<Square> list = [];
 
-  setNewLocation(Offset newlocation) async {
+  void setNewLocation(Offset newlocation) async {
     for (var i = 0; i < animation.length; i++) {
       animation[i] = Tween<Offset>(begin: _currentLocation, end: newlocation)
           .animate(CurvedAnimation(
