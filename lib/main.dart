@@ -24,21 +24,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
-    return Container(
-      constraints: const BoxConstraints(minHeight: 100, minWidth: 100),
-      color: Colors.black,
-      child: const SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Text("hii"),
-      ),
-    );
-  }
-}
