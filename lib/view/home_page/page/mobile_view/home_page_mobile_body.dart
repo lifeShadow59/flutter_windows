@@ -20,6 +20,9 @@ class _HomePageMobileBodyState extends State<HomePageMobileBody> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: const [
+              SizedBox(
+                height: 30,
+              ),
               Text(
                 " Mobile App ",
                 style: TextStyle(
@@ -27,7 +30,7 @@ class _HomePageMobileBodyState extends State<HomePageMobileBody> {
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 15,
               ),
               HomePageAnimationWidget()
             ],
