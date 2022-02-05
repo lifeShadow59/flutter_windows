@@ -10,7 +10,7 @@ class HomePageMobileBody extends StatefulWidget {
 }
 
 class _HomePageMobileBodyState extends State<HomePageMobileBody> {
-  TapUpDetails? tapUpDetails;
+  Offset? tapUpDetails;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -21,7 +21,7 @@ class _HomePageMobileBodyState extends State<HomePageMobileBody> {
           child: GestureDetector(
             behavior: HitTestBehavior.opaque,
             onTapUp: (d) {
-              tapUpDetails = d;
+              tapUpDetails = d.globalPosition;
               setState(() {});
             },
           ),
@@ -30,7 +30,12 @@ class _HomePageMobileBodyState extends State<HomePageMobileBody> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: const [
-              Text(" mobile app app "),
+              Text(
+                " Mobile App ",
+                style: TextStyle(
+                  fontSize: 25,
+                ),
+              ),
               SizedBox(
                 height: 10,
               ),

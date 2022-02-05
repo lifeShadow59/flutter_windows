@@ -5,7 +5,7 @@ import 'package:flutter_windows/widget/animations/square_animation/square_animat
 class SquareAnimation extends StatefulWidget {
   const SquareAnimation({Key? key, required this.tapUpDetails})
       : super(key: key);
-  final TapUpDetails? tapUpDetails;
+  final Offset? tapUpDetails;
   @override
   _SquareAnimationState createState() => _SquareAnimationState();
 }
@@ -20,7 +20,7 @@ class _SquareAnimationState extends SquareAnimationFunction {
   @override
   Widget build(BuildContext context) {
     if (widget.tapUpDetails != null) {
-      setNewLocation(widget.tapUpDetails!.localPosition);
+      setNewLocation(widget.tapUpDetails!);
     }
 
     return Stack(
