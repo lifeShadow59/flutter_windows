@@ -1,5 +1,5 @@
 import 'dart:io';
-
+import 'package:url_strategy/url_strategy.dart';
 import 'package:desktop_window/desktop_window.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/foundation.dart';
@@ -11,6 +11,7 @@ import 'package:flutter_windows/responsive/responsive.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   if (kIsWeb) {
+    setPathUrlStrategy();
   } else {
     if (Platform.isWindows) {
       DesktopWindow.setMinWindowSize(const Size(512, 384));

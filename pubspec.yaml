@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   fluent_ui: ^3.8.0
   desktop_window: ^0.4.0
+  url_strategy: ^0.2.0
 
 dev_dependencies:
   flutter_test:
